@@ -4,7 +4,7 @@
 
 - Swagger UI interface has been provided for the API
 - The following API call will create a board and return an id for that board - GET api/board
-- The following API call places a stone on the board PUT api/board/<board id>
+- The following API call places a stone on the board PUT api/board/board_id
 
 ## Assumptions
 
