@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gomoku</name>
+    </assembly>
+    <members>
+        <member name="M:Gomoku.Controllers.BoardController.Get">
+            <summary>
+            Generates a new game board to play against
+            </summary>
+            <returns>Returns a GUID, to identify the board when making moves</returns>
+        </member>
+        <member name="M:Gomoku.Controllers.BoardController.Put(System.Guid,Gomoku.Logic.Piece)">
+            <summary>
+            Place a piece/stone onto the board.
+            </summary>
+            <param name="id">Id of the game board to place the piece/stone onto.</param>
+            <param name="piece">The piece to be place on the game board</param>
+            <returns>A response indicating if the move resulted in a win or no-result</returns>
+        </member>
+        <member name="M:Gomoku.Logic.Board.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a new game board and assigns a guid to identify the board
+            </summary>
+            <param name="numberOfRows">The number of rows down the board</param>
+            <param name="numberOfColumns">The number of columns across the board</param>
+            <param name="requiredChainLengthToWin">The number of sequential pieces (size of chain), required to win</param>
+        </member>
+        <member name="M:Gomoku.Logic.Board.IsPositionEmpty(System.Int32,System.Int32)">
+            <summary>
+            Checks to see a piece exists at the provided co-ordinates
+            </summary>
+            <param name="row">The row index</param>
+            <param name="column">The column index</param>
+            <returns>True if the space is unoccupied, otherwise false</returns>
+        </member>
+        <member name="M:Gomoku.Logic.Board.IsMatch(Gomoku.Logic.Piece,Gomoku.Logic.Piece)">
+            <summary>
+            Determines if the current piece and the piece next to, are the matching colour
+            </summary>
+            <param name="currentPiece">The current piece to compare with</param>
+            <param name="nextPiece">The piece next to, to compare to</param>
+            <returns>True if the two pieces match, otherwise false</returns>
+        </member>
+        <member name="M:Gomoku.Logic.Board.IsWin(System.Int32)">
+            <summary>
+            Determines if the winning condition has been meet
+            </summary>
+            <param name="currentChainCount">The current number of sequential pieces, of the same colour, are in the chain</param>
+            <returns>True if the winning condition is met, otherwise false</returns>
+        </member>
+        <member name="M:Gomoku.Logic.Board.PlacePiece(Gomoku.Logic.Piece)">
+            <summary>
+            Places a piece on the board
+            </summary>
+            <param name="piece">The piece to place on the board</param>
+            <returns>A result determining the outcome of placing the piece on the board</returns>
+            <exception cref="T:Gomoku.Exceptions.InvalidMoveException">Thrown when placing a piece on the board, results in an illegal move</exception>
+        </member>
+        <member name="M:Gomoku.Logic.Board.DetermineMoveResult(Gomoku.Logic.Piece)">
+            <summary>
+            Combines all the possible winning combinations, to determine if a winning outcome or no outcome has been reached
+            </summary>
+            <param name="currentPiece">The last piece to be placed on the board</param>
+            <returns>Result.Win, when at least one winning combination has been met, otherwise Result.NoResult</returns>
+        </member>
+        <member name="M:Gomoku.Logic.Board.CheckVerticalResult(Gomoku.Logic.Piece)">
+            <summary>
+            Checks for a winning condition in a possible vertical chain
+            </summary>
+            <param name="currentPiece">The current piece, to check for a chain from</param>
+            <returns>Result to indicate if the vertical chain results in a </returns>
+        </member>
+        <member name="M:Gomoku.Logic.Board.CheckHorizontalResult(Gomoku.Logic.Piece)">
+            <summary>
+            Checks for a winning condition in a possible horizontal chain
+            </summary>
+            <param name="currentPiece">The current piece, to check for a chain from</param>
+            <returns>Result to indicate if the vertical chain results in a </returns>
+        </member>
+        <member name="M:Gomoku.Logic.Board.CheckDiagonalResult(Gomoku.Logic.Piece)">
+            <summary>
+            Checks for a winning condition in a possible diagonal chain
+            </summary>
+            <param name="currentPiece">The current piece, to check for a chain from</param>
+            <returns>Result to indicate if the vertical chain results in a </returns>
+        </member>
+        <member name="P:Gomoku.Logic.Piece.Colour">
+            <summary>
+            The colour of the Piece
+            </summary>
+        </member>
+        <member name="P:Gomoku.Logic.Piece.Row">
+            <summary>
+            The Row index where this 
+            </summary>
+        </member>
+    </members>
+</doc>
